@@ -1,1 +1,1 @@
-        This repository contains scripts for working with html-pages.
+     This repository contains scripts for testing html pages using the "selenium" plugin.

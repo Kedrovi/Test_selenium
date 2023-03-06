@@ -16,9 +16,7 @@ try:
 
     new_window = browser.window_handles[1] # name new tab
     browser.switch_to.window(new_window) # new tab
-    #confirm = browser.switch_to.alert
-    #confirm.accept() # switch button ok, confirm.dismiss()
-    #browser.get("http://suninjuly.github.io/alert_redirect.html?")
+
     input2 = browser.find_element(By.ID, "input_value")
     x = input2.text
     y = calc(x)
@@ -26,6 +24,19 @@ try:
     input3.send_keys(y)
     button2 = browser.find_element(By.CLASS_NAME, "btn.btn-primary") # !!!!!
     button2.click()
+    
+    time.sleep(2)
+
+finally:
+    time.sleep(2)
+    browser.quit()
+
+    # SAMPLE
+    '''
+    #confirm = browser.switch_to.alert
+    #confirm.accept() # switch button ok, confirm.dismiss()
+    #browser.get("http://suninjuly.github.io/alert_redirect.html?")
+    '''
     '''
     # work with lists
     from selenium.webdriver.support.ui import Select
@@ -79,8 +90,3 @@ try:
 
     #button = browser.find_element(By.CSS_SELECTOR, "body > div > form > button")
     #button.click()
-    time.sleep(2)
-
-finally:
-    time.sleep(2)
-    browser.quit()

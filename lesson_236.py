@@ -23,7 +23,7 @@ try:
 
     input3 = browser.find_element(By.CSS_SELECTOR, "input.form-control")
     input3.send_keys(y)
-    
+
     button2 = browser.find_element(By.CLASS_NAME, "btn.btn-primary") # !!!!!
     button2.click()
 
@@ -31,6 +31,14 @@ try:
 finally:
     time.sleep(2)
     browser.quit()
+
+
+
+
+
+
+
+
 
     # SAMPLE
     '''

@@ -6,16 +6,12 @@ import os
 
 def calc(x):
   return str(math.log(abs(12*math.sin(int(x)))))
-'''
-input1 = browser.find_element(By.CSS_SELECTOR, "#input_value")
-x = input1.text
-y = calc(x)
-'''
+
 try:
     browser = webdriver.Chrome()
-    browser.get("http://suninjuly.github.io/redirect_accept.html")
+    browser.get("http://suninjuly.github.io/redirect_accept.html") # open link
 
-    button1 = browser.find_element(By.CLASS_NAME, "trollface.btn.btn-primary") # !!!!!
+    button1 = browser.find_element(By.CLASS_NAME, "trollface.btn.btn-primary") # for some class-name
     button1.click()
 
     new_window = browser.window_handles[1] # name new tab
@@ -28,8 +24,14 @@ try:
     y = calc(x)
     input3 = browser.find_element(By.CSS_SELECTOR, "input.form-control")
     input3.send_keys(y)
-    button1 = browser.find_element(By.CLASS_NAME, "btn.btn-primary") # !!!!!
-    button1.click()
+    button2 = browser.find_element(By.CLASS_NAME, "btn.btn-primary") # !!!!!
+    button2.click()
+    '''
+    # work with lists
+    from selenium.webdriver.support.ui import Select
+    select = Select(browser.find_element(By.TAG_NAME, "select"))
+    select.select_by_value("1") # ищем элемент с текстом "Python"
+    '''
     '''
     # work with tab - vkladki
     browser.switch_to.window(window_name) # new tab
@@ -40,7 +42,7 @@ try:
     #option1 = browser.find_element(By.CSS_SELECTOR, "#robotCheckbox")
     #input4 = browser.find_element(By.ID, "file")
     #input4.click()
-
+    #people_checked = people_radio.get_attribute("checked") # for checkbox
     '''
     # send file
     import os
@@ -62,47 +64,8 @@ try:
 
     #button = browser.find_element(By.CSS_SELECTOR, "body > div > form > button")
     #button.click()
-    time.sleep(4)
+    time.sleep(2)
 
 finally:
-    time.sleep(3)
+    time.sleep(2)
     browser.quit()
-'''
-import math
-from selenium.webdriver.support.ui import Select
-
-def calc(x):
-  return str(math.log(abs(12*math.sin(int(x)))))
-
-try:
-    browser = webdriver.Chrome()
-    browser.get("http://suninjuly.github.io/execute_script.html")
-
-    num = browser.find_element(By.CSS_SELECTOR, "#input_value")
-    x = num.text
-
-    y = calc(x)
-    input2 = browser.find_element(By.CSS_SELECTOR, "#answer")
-    browser.execute_script("return arguments[0].scrollIntoView(true);", input2)
-    input2.send_keys(y)
-
-    #select = Select(browser.find_element(By.TAG_NAME, "select"))
-    #select.select_by_value(str(y))
-
-
-
-    option1 = browser.find_element(By.CSS_SELECTOR, "#robotCheckbox")
-    option1.click()
-    option2 = browser.find_element(By.CSS_SELECTOR, "#robotsRule")
-    option2.click()
-    button = browser.find_element(By.TAG_NAME, "button")
-    browser.execute_script("return arguments[0].scrollIntoView(true);", button)
-    button.click()
-
-    time.sleep(4)
-
-finally:
-    time.sleep(3)
-    browser.quit()
-
-'''

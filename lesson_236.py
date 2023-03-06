@@ -20,13 +20,14 @@ try:
     input2 = browser.find_element(By.ID, "input_value")
     x = input2.text
     y = calc(x)
+
     input3 = browser.find_element(By.CSS_SELECTOR, "input.form-control")
     input3.send_keys(y)
+    
     button2 = browser.find_element(By.CLASS_NAME, "btn.btn-primary") # !!!!!
     button2.click()
-    
-    time.sleep(2)
 
+    time.sleep(2)
 finally:
     time.sleep(2)
     browser.quit()
@@ -58,10 +59,7 @@ finally:
     # Examples
     input2 = browser.find_element(By.CSS_SELECTOR, "#answer") # ID
     input2.send_keys(y)
-
-
     option1 = browser.find_element(By.CSS_SELECTOR, "#robotCheckbox")
-
     option1.click()
     option2 = browser.find_element(By.CSS_SELECTOR, "div.form-check.form-radio-custom input[name='ruler']")
     option2.click()
@@ -87,6 +85,5 @@ finally:
     #option2 = browser.find_element(By.CSS_SELECTOR, "div.form-check.form-radio-custom input[name='ruler']")
     #option2.click()
     #robotsRule
-
     #button = browser.find_element(By.CSS_SELECTOR, "body > div > form > button")
     #button.click()
